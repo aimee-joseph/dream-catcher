@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY ||'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'
-  });
+  apiKey: process.env.OPENAI_API_KEY
+});
 
 // Call OpenAI API for dream interpretation
 export async function getDreamInterpretation(dreamText) {
