@@ -11,10 +11,14 @@ if (process.env.NODE_ENV !== 'production') {
     console.log('We are not in production mode 👨‍💻')
 }
 
-const app = express() 
+const app = express()
 
 app.get('/', (req, res) => {
     res.send(`<!doctype html><html><body>Hello Express!</body></html>`)
 })
 
-app.listen(8001, ()=>console.log('listening 8000'))
+const PORT = process.env.PORT || 8001;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log('Listening on port ${PORT}');
+});
